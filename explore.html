@@ -1,26 +1,235 @@
-<!DOCTYPE html> 
-<html>
-  <head>
-  <title>KJ SteakHouse</title> 
-</head> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Finds | Explore</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
 <body>
-  <header>
-    
-  </header> 
-  <nav>
-  <p>
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </p>
-  </nav>
-  <section>
-    
-  </section>
-  <footer>
-    
-  </footer>
-</html>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+
+            <h1 class="logo">Foodie Finds</h1>
+
+            <button class="hamburger" id="hamburger"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="nav-links">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="explore.html" class="active">Explore</a></li>
+                <li><a href="about.html">About / Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Page Introduction -->
+        <section class="page-intro">
+
+            <h2>Explore Restaurants</h2>
+
+            <p>
+                Discover different restaurants, cuisines, and delicious
+                meals. Find something new to try!
+            </p>
+
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+
+            <h2>Find Your Favourite Restaurant</h2>
+
+            <!-- Search Input -->
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search restaurant names..."
+                aria-label="Search restaurants">
+
+            <!-- Cuisine Filter -->
+            <select id="category-filter" aria-label="Filter by cuisine">
+
+                <option value="all">All Cuisines</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Mexican">Mexican</option>
+                <option value="American">American</option>
+
+            </select>
+
+            <!-- Sorting Option -->
+            <select id="sort-option" aria-label="Sort restaurants">
+
+                <option value="default">Default Order</option>
+                <option value="highest">Highest Rated</option>
+                <option value="lowest">Lowest Rated</option>
+
+            </select>
+
+            <p id="favourite-count">
+                Favourites: 0
+            </p>
+
+        </section>
+
+        <!-- Restaurant Cards -->
+        <section class="restaurant-section">
+
+            <h2>Available Restaurants</h2>
+
+            <div class="restaurant-container" id="restaurant-container">
+
+                <!-- Restaurant 1 -->
+                <article class="restaurant-card"
+                         data-name="Pizza Paradise"
+                         data-category="Italian"
+                         data-rating="4.8">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=600"
+                        alt="Italian pizza">
+
+                    <div class="restaurant-info">
+
+                        <h3>Pizza Paradise</h3>
+
+                        <p>Category: Italian</p>
+
+                        <p>Location: Toronto, Ontario</p>
+
+                        <p>Average Price: $20-$30</p>
+
+                        <p>Rating: 4.8/5</p>
+
+                        <button class="favorite-btn"
+                                type="button">
+                            ♡ Add to Favourites
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- Restaurant 2 -->
+                <article class="restaurant-card"
+                         data-name="Sushi House"
+                         data-category="Japanese"
+                         data-rating="4.9">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600"
+                        alt="Japanese sushi">
+
+                    <div class="restaurant-info">
+
+                        <h3>Sushi House</h3>
+
+                        <p>Category: Japanese</p>
+
+                        <p>Location: Markham, Ontario</p>
+
+                        <p>Average Price: $25-$40</p>
+
+                        <p>Rating: 4.9/5</p>
+
+                        <button class="favorite-btn"
+                                type="button">
+                            ♡ Add to Favourites
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- Restaurant 3 -->
+                <article class="restaurant-card"
+                         data-name="Taco Fiesta"
+                         data-category="Mexican"
+                         data-rating="4.7">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600"
+                        alt="Mexican tacos and pizza">
+
+                    <div class="restaurant-info">
+
+                        <h3>Taco Fiesta</h3>
+
+                        <p>Category: Mexican</p>
+
+                        <p>Location: Vaughan, Ontario</p>
+
+                        <p>Average Price: $15-$25</p>
+
+                        <p>Rating: 4.7/5</p>
+
+                        <button class="favorite-btn"
+                                type="button">
+                            ♡ Add to Favourites
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- Restaurant 4 -->
+                <article class="restaurant-card"
+                         data-name="Burger Station"
+                         data-category="American"
+                         data-rating="4.5">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600"
+                        alt="American cheeseburger">
+
+                    <div class="restaurant-info">
+
+                        <h3>Burger Station</h3>
+
+                        <p>Category: American</p>
+
+                        <p>Location: Newmarket, Ontario</p>
+
+                        <p>Average Price: $12-$22</p>
+
+                        <p>Rating: 4.5/5</p>
+
+                        <button class="favorite-btn"
+                                type="button">
+                            ♡ Add to Favourites
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- Message for No Results -->
+            <p id="no-results" hidden>
+                No restaurants found. Try another search!
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Foodie Finds. All Rights Reserved.</p>
+    </footer>
+
 </body>
+</html>
