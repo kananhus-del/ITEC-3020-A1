@@ -1,0 +1,463 @@
+/* =========================================
+   FOODIE FINDS - MAIN STYLESHEET
+   Shared styles for home.html, explore.html
+   and about.html
+   ========================================= */
+
+/* 1. Global reset and page defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #242424;
+    --dark-soft: #333333;
+    --orange: #f28c28;
+    --orange-dark: #d97716;
+    --background: #f7f7f7;
+    --white: #ffffff;
+    --text: #292929;
+    --muted: #666666;
+    --border: #dddddd;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 2. HEADER AND NAVIGATION */
+header {
+    width: 100%;
+    background-color: var(--dark);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+/* Flexbox puts the logo and navigation on one row */
+.navbar {
+    max-width: 1200px;
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 12px 28px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Website name on the left */
+.logo {
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Navigation list on the right */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+}
+
+/* Individual navigation links */
+.nav-links a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover and currently selected page */
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+/* Hidden on desktop; displayed on small screens */
+.hamburger {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--white);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 5px 8px;
+}
+
+/* 3. GENERAL PAGE LAYOUT */
+main {
+    width: 100%;
+    min-height: 70vh;
+}
+
+section {
+    width: 100%;
+}
+
+/* 4. HOME PAGE HERO */
+.hero {
+    min-height: 330px;
+    padding: 75px 24px;
+    background: linear-gradient(135deg, #3a3028, #76502f);
+    color: var(--white);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 14px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+
+.menu-button {
+    display: inline-block;
+    background-color: var(--orange);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 23px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.explore-button:hover {
+    background-color: var(--orange-dark);
+    transform: translateY(-2px);
+}
+
+/* 5. HOME PAGE FEATURED RESTAURANTS */
+.featured,
+.introduction,
+.page-intro,
+.search-section,
+.restaurant-section,
+.about-section,
+.mission-section,
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 28px;
+}
+
+.featured > h2,
+.introduction h2,
+.page-intro h2,
+.search-section h2,
+.restaurant-section h2,
+.about-section h2,
+.mission-section h2,
+.contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.featured > p,
+.page-intro p,
+.search-section > p,
+.about-section p,
+.mission-section p,
+.contact-section > p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.featured-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+}
+
+.featured-card,
+.restaurant-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featured-card:hover,
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+.featured-card img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.featured-card h3,
+.featured-card p {
+    margin: 12px 18px;
+}
+
+.featured-card h3 {
+    margin-top: 17px;
+    font-size: 21px;
+}
+
+.featured-card p:last-child {
+    margin-bottom: 18px;
+}
+
+.introduction {
+    text-align: center;
+    background-color: #eeeeee;
+    max-width: none;
+}
+
+.introduction p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    color: var(--muted);
+}
+
+.introduction a {
+    display: inline-block;
+    color: var(--orange-dark);
+    font-weight: 700;
+}
+
+/* 6. EXPLORE PAGE */
+.page-intro {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.search-section {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.search-section input,
+.search-section select {
+    min-height: 44px;
+    margin: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--white);
+    font: inherit;
+}
+
+.search-section input {
+    width: min(100%, 320px);
+}
+
+#favourite-count {
+    margin-top: 12px;
+    font-weight: 700;
+    color: var(--orange-dark);
+}
+
+.restaurant-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 22px;
+}
+
+.restaurant-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.restaurant-info {
+    padding: 18px;
+}
+
+.restaurant-info h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.restaurant-info p {
+    color: var(--muted);
+    margin: 4px 0;
+}
+
+.favorite-btn,
+.contact-section button {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--orange);
+    color: var(--white);
+    font: inherit;
+    font-weight: 700;
+    padding: 10px 15px;
+    margin-top: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.favorite-btn:hover,
+.contact-section button:hover {
+    background-color: var(--orange-dark);
+}
+
+.favorite-btn.favourited {
+    background-color: #b83232;
+}
+
+#no-results {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* 7. ABOUT AND CONTACT PAGE */
+.about-section,
+.mission-section,
+.contact-section {
+    max-width: 850px;
+}
+
+.about-section p,
+.mission-section p {
+    margin-bottom: 15px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.contact-section label {
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--white);
+    font: inherit;
+}
+
+.contact-section textarea {
+    resize: vertical;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus,
+.search-section input:focus,
+.search-section select:focus {
+    outline: 2px solid var(--orange);
+    outline-offset: 1px;
+}
+
+.contact-section button {
+    align-self: flex-start;
+}
+
+#form-feedback {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* 8. FOOTER */
+footer {
+    margin-top: 30px;
+    padding: 22px;
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+}
+
+/* 9. RESPONSIVE LAYOUT */
+@media (max-width: 700px) {
+    .navbar {
+        position: relative;
+        min-height: 68px;
+        padding: 12px 20px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* The menu is hidden until the JS adds .show-menu */
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px 0 5px;
+    }
+
+    .nav-links.show-menu {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 12px;
+    }
+
+    .featured-container,
+    .restaurant-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 290px;
+        padding: 55px 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .featured,
+    .introduction,
+    .page-intro,
+    .search-section,
+    .restaurant-section,
+    .about-section,
+    .mission-section,
+    .contact-section {
+        padding: 32px 20px;
+    }
+}
