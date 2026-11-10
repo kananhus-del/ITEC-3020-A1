@@ -36,4 +36,4 @@ The website uses JavaScript to implement the following interactive features:
 ## Technologies Used
 - HTML
 - CSS
-- Vanilla JavaScript
+- JavaScript
