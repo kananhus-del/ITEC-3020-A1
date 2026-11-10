@@ -144,7 +144,7 @@ section {
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.explore-button:hover {
+.menu-button:hover {
     background-color: var(--orange-dark);
     transform: translateY(-2px);
 }
@@ -449,6 +449,11 @@ footer {
     .hero p {
         font-size: 16px;
     }
+
+    
+
+
+
 
     .featured,
     .introduction,
